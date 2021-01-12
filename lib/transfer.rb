@@ -23,7 +23,7 @@ class Transfer
     elsif @status == "complete"
       puts "Transaction was already excuted"
     else
-      @sender.deposit(@amount * -1) 
+      @sender.deposit(@amount * -1)
       @receiver.deposit(@amount)
       @status = "complete"
     end
@@ -31,7 +31,7 @@ class Transfer
 
   def reverse_transfer
     if @status == "complete"
-      @sender.deposit( @amount ) 
+      @sender.deposit( @amount )
       @receiver.deposit( @amount * -1)
       @status = "reversed"
     end
