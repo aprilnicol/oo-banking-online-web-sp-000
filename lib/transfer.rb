@@ -4,7 +4,7 @@ class Transfer
     @sender = sender
     @receiver = receiver
     @amount = amount
-    @status = status 
+    @status = status
   end
 
   def valid?
@@ -35,4 +35,4 @@ class Transfer
       "Transaction rejected. Please check your account balance."
     end
   end
-end 
+end
