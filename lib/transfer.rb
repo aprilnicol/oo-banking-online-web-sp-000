@@ -1,12 +1,12 @@
 class Transfer
   attr_accessor :sender, :receiver, :amount, :status, :count
-  def initialize?(sender, reciever, amount)
+  def initialize?(sender, receiver, amount)
     @sender = sender
-    @reciever = reciever
+    @reciever = receiver
     @status = "pending"
 end
 def both_valid?
-  if sender.valid? && reciever.valid?
+  if sender.valid? && receiver.valid?
     true
   else
     false
@@ -21,14 +21,14 @@ def execute_transaction
     puts "Transaction was already excuted."
   else
     @sender.deposit(@amount * -1)
-    @reciever.deposit(@amount)
+    @receiver.deposit(@amount)
     @status = "complete"
   end
 end
 def reverse_transfer
   if @status == "complete"
     @status.deposit(@amount)
-    @reciever.deposit(@amount * -1)
+    @receiver.deposit(@amount * -1)
     @status = "reversed"
   end
 end
