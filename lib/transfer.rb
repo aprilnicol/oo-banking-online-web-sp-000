@@ -2,7 +2,7 @@ class Transfer
   attr_accessor :sender, :receiver, :amount, :status, :count
   def initialize?(sender, receiver, amount)
     @sender = sender
-    @reciever = receiver
+    @receiver = receiver
     @status = "pending"
 end
 def both_valid?
