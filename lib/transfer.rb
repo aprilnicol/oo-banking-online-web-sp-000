@@ -20,8 +20,8 @@ def execute_transaction
   elsif @status == "complete"
     puts "Transaction was already excuted."
   else
-    @sender.deposit(@amount * -1)
-    @receiver.deposit(@amount)
+    @sender.deposit( @amount * -1 )
+    @receiver.deposit( @amount)
     @status = "complete"
   end
 end
